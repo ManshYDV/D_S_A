@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class customStack {
 
     protected int[] data;
-    private static final int MAX_SIZE=10;
+    private static final int MAX_SIZE=5;
 
     int stackPointer=-1;
 public customStack(){
@@ -14,10 +14,10 @@ public customStack(){
         this.data=new int[size];
     }
 
-    private boolean isFull(){
+    public boolean isFull(){
   return stackPointer==data.length-1;
     }
-    private boolean isEmpty(){
+    public boolean isEmpty(){
     return stackPointer==-1;
     }
     public boolean push(int item){
@@ -44,19 +44,32 @@ public int pop() throws Exception{
 
 public int peek() throws Exception{
     if(isEmpty()){
-        throw new Exception("cannot peek from an emoty stack");
+        throw new Exception("cannot peek from an empty stack");
     }
     return data[stackPointer];
 }
 
 
     public static void main(String[] args)throws Exception {
-    customStack stack=new customStack();
-    stack.push(5);
-    stack.push(2);
+//    customStack stack=new customStack(8);
+//    stack.push(5);
+//    stack.push(2);
+////        System.out.println(stack.peek());
+////        System.out.println(stack.pop());
+//        stack.push(8);
+//        stack.push(5);
+//        stack.push(2);
+//        stack.push(5);
+//        stack.push(10);
+//        System.out.println(stack.peek());
+        customStack stack=new dynamicStack();
+        stack.push(5);
+        stack.push(2);
+        stack.push(2);
+        stack.push(5);
+        stack.push(2);
+        stack.push(5);
+        stack.push(10);
         System.out.println(stack.peek());
-        System.out.println(stack.pop());
-        stack.push(8);
-
     }
 }
