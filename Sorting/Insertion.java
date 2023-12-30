@@ -1,22 +1,25 @@
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Insertion{
 
     private static void Insertion1(int number[]){
-      for(int i=1;i<number.length;i++){   
-        int temp=number[i];
-        int j=i-1;
-        while(j>=0 && number[j]>temp){
-            number[j+1]=number[j];
-            j--;
-        }
-        number[j+1]=temp;
+      for(int i=0;i<number.length-1;i++){
+          for(int j=i+1;j>0;j--){
+              if(number[j] < number[j-1]){
+                  swap(number, j, j-1);
+              }
+              else{
+                  break;
+              }
+          }
       }
-      System.out.println("After");
-      for(int i : number){
-       System.out.println(i);
-      }
+    }
+    private static void swap(int [] arr, int first, int second){
+        int temp=arr[first];
+        arr[first]=arr[second];
+        arr[second]=temp;
     }
     public static void main(String[] args){
         Random ran=new Random();
@@ -29,5 +32,6 @@ public class Insertion{
             System.out.println(i);
         }
         Insertion1(number);
+        System.out.println(Arrays.toString(number));
     }
 }

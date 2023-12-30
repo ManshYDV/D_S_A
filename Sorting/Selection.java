@@ -3,26 +3,30 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Selection {
-    private static void swap(int [] arr, int a, int b){
-        int temp=arr[a];
-        arr[a]=arr[b];
-        arr[b]=temp;
-    }
-    private static void Sel(int [] arr){  //1023
-        int lenght=arr.length;
-        for(int i=0;i<lenght-1;i++){
-            int smallest=arr[i];
-            int indexMin=i;
-            for(int j=i+1;j<lenght;j++){
-            if(arr[j]<smallest){
-                smallest=arr[j];
-             indexMin=j;
-            }
-            }
-            swap(arr, i, indexMin);
+
+    private static void Sel(int [] arr){
+        for(int i=0;i<arr.length;i++){
+            int last=arr.length-i-1;
+            int maxIndex=max(arr, 0, last);
+            swap(arr,  maxIndex, last);
         }
-        System.out.println(Arrays.toString(arr));
-    } 
+    }
+
+    private static void swap(int [] arr, int first, int second){
+        int temp=arr[first];
+        arr[first]=arr[second];
+        arr[second]=temp;
+    }
+    private static int max(int []arr, int start, int last){
+        int max=start;
+        for(int i=start;i<=last;i++){
+            if(arr[i] > arr[max]){
+                max=i;
+            }
+        }
+        return max;
+    }
+
     public static void main(String[] args){
         int []arr =new int[5];
         Random ran=new Random(0);
@@ -34,6 +38,7 @@ public class Selection {
         System.out.println(i);
     }
     Sel(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }
 
