@@ -68,6 +68,8 @@ public class BSOnMatrix {
                 {8,9,10},
                 {11,12}
         };
+        String str="man";
+        str.replace("a","o");
         int target=7;
         System.out.println(Arrays.toString(sol(matrix, target)));
 
