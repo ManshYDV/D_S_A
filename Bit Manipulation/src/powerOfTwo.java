@@ -6,7 +6,6 @@ public class powerOfTwo {
             n=n>>1;
             count++;
         }
-        Math.floor(4);
         System.out.println("its a power of 2^"+count);
         if((n&(n-1))==0){
             System.out.println("Its a power of two");
