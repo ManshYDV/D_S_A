@@ -37,8 +37,8 @@ public class subSequence {
     }
 
     public static void main(String[] args) {
-        //sol("", "ab");
-        sol3("","ab");
+        sol("", "abc");
+        //sol3("","ab");
        // System.out.println(sol2("", "abc"));
     }
 }

@@ -47,8 +47,8 @@ public class permutation {
 
     public static void main(String[] args) {
       // sol("","abc");
-       ArrayList<String> ans=sol1("","abc");
+       ArrayList<String> ans=sol1("","abcde");
         System.out.println(ans);
-        System.out.println(rtrCount("","abc"));
+      //  System.out.println(rtrCount("","abc"));
     }
 }

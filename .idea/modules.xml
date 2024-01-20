@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Recursion/ArrayQuestions/ArrayQuestions.iml" filepath="$PROJECT_DIR$/Recursion/ArrayQuestions/ArrayQuestions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Recursion/BackTracking/BackTracking.iml" filepath="$PROJECT_DIR$/Recursion/BackTracking/BackTracking.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bit Manipulation/Bit Manipulation.iml" filepath="$PROJECT_DIR$/Bit Manipulation/Bit Manipulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Recursion/Easy/Easy.iml" filepath="$PROJECT_DIR$/Recursion/Easy/Easy.iml" />
       <module fileurl="file://$PROJECT_DIR$/MathsDSA/MathsDSA.iml" filepath="$PROJECT_DIR$/MathsDSA/MathsDSA.iml" />
