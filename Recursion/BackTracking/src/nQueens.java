@@ -15,20 +15,26 @@ public class nQueens {
            Arrays.fill(c, '.');
        }
         //Arrays.fill(board, '.');
-        List<List<String>> ans=sol(board, n);
+        int [] numOfWays=new int[]{0};
+        List<List<String>> ans=sol(board, n, numOfWays);
+
         System.out.println(ans);
+        System.out.println(numOfWays[0]);
     }
 
-    public static List<List<String>> sol(char [][] board, int n){
+    public static List<List<String>> sol(char [][] board, int n, int [] numOfWays){
         List<List<String>> ans=new ArrayList<>();
-        backTrack(board,0, ans, new ArrayList<String>());
+
+        backTrack(board,0, ans, new ArrayList<String>(), numOfWays);
         return ans;
     }
 
-    private static void backTrack(char [][] board, int row, List<List<String>> ans, List<String> curr){
+    private static void backTrack(char [][] board, int row, List<List<String>> ans, List<String> curr,int [] numOfWays){
         if(row == board.length){
 //            ans.add(new ArrayList<>(curr));
 //            return;
+
+            numOfWays[0]++;
             List<String> result = new ArrayList<>();
             for (int i = 0; i < board.length; i++) {
                 result.add(new String(board[i]));
@@ -39,7 +45,7 @@ public class nQueens {
         for(int col=0; col < board.length; col++){
             if(isSafe(board, row, col)){
                 board[row][col]='Q';
-                backTrack(board, row+1, ans, curr);
+                backTrack(board, row+1, ans, curr, numOfWays);
                 board[row][col]='.';
             }
         }
